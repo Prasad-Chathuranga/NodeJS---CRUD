@@ -1,0 +1,77 @@
+j<h2 class="text-center mt-3 mb-3">Add User</h2><hr>
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form class="form-horizontal" method="post" action="/addUser">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">First Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="Enter First Name" name="fname">
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Last Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="Enter Last Name" name="lname">
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="inputFirstName" placeholder="Enter Your Email" name="email">
+                        </div>
+                    </div>
+
+                     <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Proffesion</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputFirstName" placeholder="Enter Your Proffesion" name="prof">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-block btn-success" id="addUser">Add User</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table justify-content-center table-hover">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Proffesion</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+      {{#each users}}
+
+    <tr>
+      <th>{{this.fname}}</th>
+      <td>{{this.lname}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.prof}}</td>
+      <td>
+          <a href="/editUser/{{this.id}}"><button class="btn btn-primary">Edit</button></a>  <a href="/deleteUser/{{this.id}}"><button class="btn btn-danger">Delete</button></a>
+          
+      </td>
+    </tr>
+    
+    {{/each}}
+
+  </tbody>
+</table>
+            </div>
+        
+    </div>
+</div>
